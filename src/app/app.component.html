@@ -1,4 +1,13 @@
-<h1 style="text-align: center;">App handle the file</h1>
+<div>
+  <ul>
+    <li (click)="changeLang('en')">English</li>
+    <li (click)="changeLang('hi')">Hindi</li>
+  </ul>
+</div>
+
+
+
+<h1 style="text-align: center;">{{'welcome' | translate}}</h1>
 
 <div class="table-container" id="#print-section">
   <mat-form-field appearance="outline">

@@ -7,6 +7,7 @@ import { saveAs } from 'file-saver';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { DownloadComponent } from './download/download.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private http: HttpClient, private dialog: MatDialog) {}
+  constructor(private http: HttpClient, private dialog: MatDialog, private _translate:TranslateService) {}
 
   ngOnInit(): void {
     this.fetchUsers();
@@ -89,7 +90,10 @@ getTodayDate(): string {
     }, 500);
   }
 }
+changeLang(lang:string){
+  this._translate.use(lang)
 
+}
 generatePrintableHTML(data: any[]): string {
 
   // created own html view for print view
