@@ -91,6 +91,8 @@ getTodayDate(): string {
 }
 
 generatePrintableHTML(data: any[]): string {
+
+  // created own html view for print view
   let html = `
     <html>
     <head>
